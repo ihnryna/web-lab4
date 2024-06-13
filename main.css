@@ -89,7 +89,8 @@ body {
 
 .top{
     font-size: 15px;
-    width: 71%;
+    width: calc(100% - 445px);
+    float: left;
     height: 65px;
     box-sizing: content-box;
     padding-top: 8px;
@@ -131,11 +132,10 @@ body {
 }
 
 .container {
-    width: 72%;
+    width: 100%;
+    margin-right: 310px;
     float: left;
     margin-top: 80px;
-    padding-right: 10%;
-    padding-left: 10%;
 }
 
 .main-title{
@@ -181,14 +181,15 @@ body {
 }
 
 .row{
-    align-content: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px), max(300px)));
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .pizza-card {
     margin: 10px;
-    max-width: 250px;
+    width: auto;
     border: 1px solid #ddd;
     background-color: white;
     border-radius: 3px;
@@ -196,10 +197,9 @@ body {
     padding: 6px;
     position: relative;
     display: inline-block;
-    height: 510px;
 
     .pizza-icon {
-        max-width: 250px;
+        width: 100%;
         margin-bottom: 10px;
     }
 }
@@ -234,6 +234,7 @@ body {
 
 .caption {
     padding: 5px;
+    height: 250px;
 }
 
 .title {
@@ -322,6 +323,7 @@ body {
     height: 100%;
     background-color: #f4f4f4;
     width: 310px;
+    float: right;
     position: fixed;
     right: 0;
     top:0;
@@ -518,4 +520,78 @@ body {
     padding-bottom: 10px;
     border-radius: 5px;
     margin-left: 20px;
+}
+
+@media (max-width: 1700px) {
+    .container{
+        padding-right: 8%;
+        padding-left: 8%;
+    }
+}
+
+@media (max-width: 1526px) {
+    .container{
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    .free{
+        display: none;
+    }
+}
+
+@media (max-width: 926px) {
+    .schedule{
+        display: none;
+    }
+}
+
+@media (max-width: 810px) {
+    .schedule{
+        display: none;
+    }
+    .row{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(300px), max(500px)));
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .sizes{
+        left: 20%;
+    }
+}
+
+@media (max-width: 715px) {
+    .sizes{
+        left: 15%;
+    }
+}
+
+@media (max-width: 671px) {
+    .sizes{
+        left: 10%;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .phone-number{
+        font-size: 14px;
+    }
+    .btn-enter{
+        position: absolute;
+        top: 43px;
+        right: 20px;
+    }
+    .cart{
+        width: 280px;
+    }
+    .top{
+        width: calc(100% - 420px);
+    }
+    .container{
+        margin-right: 280px;
+    }
 }
