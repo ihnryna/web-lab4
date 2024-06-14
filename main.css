@@ -173,15 +173,25 @@ body {
     border-radius: 3px;
     color: #ed8801;
     margin: 4px;
+    background-color: #fdfdf4;
+    border: none;
+    box-shadow: 0 0 0;
 }
 
-.chosen .category-name {
+.category-name:hover{
+    text-decoration: underline;
+}
+
+.category-name.chosen {
     background-color: #ed8801;
     color: #fdfdf4;
 }
 
-.row{
+.category-name.chosen:hover{
+    text-decoration: none;
+}
 
+.row{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(300px), max(300px)));
     justify-content: center;
@@ -370,6 +380,8 @@ body {
     font-size: 9px;
     display: inline-block;
     color: #8c8c8c;
+    background-color: white;
+    border: none;
 }
 .clear-cart:hover{
     color: #797979;
