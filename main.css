@@ -461,6 +461,13 @@ body {
 .total{
     display: inline-block;
     margin-right: 10px;
+    min-width: 52px;
+}
+
+.product-amount{
+    display: inline-block;
+    width: 15px;
+    text-align: center;
 }
 
 .minus-button{

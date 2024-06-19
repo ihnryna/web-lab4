@@ -480,7 +480,7 @@ window.updateCart = function updateCart() {
                     buttonMinus.setAttribute("onclick", "minus(this)");
                     result.append(buttonMinus);
 
-                    let productAmount = document.createElement('span');
+                    let productAmount = document.createElement('div');
                     productAmount.className = "product-amount";
                     productAmount.innerHTML = (parseInt(localStorage.getItem(item))).toString();
                     result.append(productAmount);
