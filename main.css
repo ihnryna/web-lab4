@@ -89,7 +89,7 @@ body {
 
 .top{
     font-size: 15px;
-    width: calc(100% - 445px);
+    width: calc(100% - 455px);
     float: left;
     height: 65px;
     box-sizing: content-box;
@@ -133,7 +133,7 @@ body {
 
 .container {
     width: 100%;
-    margin-right: 310px;
+    margin-right: 320px;
     float: left;
     margin-top: 80px;
 }
@@ -149,6 +149,19 @@ body {
 }
 
 .amount {
+    background-color: #f3751f;
+    font-size: 13px;
+    border-radius: 15px;
+    color: white;
+    display: inline-block;
+    height: 17px;
+    width: 21px;
+    text-align: center;
+    margin-top: 7px;
+    padding-top: 1px;
+}
+
+.amount-menu {
     background-color: #f3751f;
     font-size: 13px;
     border-radius: 15px;
@@ -281,16 +294,18 @@ body {
     text-align: center;
 }
 
-.single{
-    margin-left: 100%;
-}
-
 .big-description {
     float: right;
     margin-left: 30px;
     margin-right: 30px;
     text-align: center;
 }
+
+
+.single{
+    margin-left: 100%;
+}
+
 
 .data {
     font-size: 13px;
@@ -348,7 +363,7 @@ body {
 .cart {
     height: 100%;
     background-color: #f4f4f4;
-    width: 310px;
+    width: 320px;
     float: right;
     position: fixed;
     right: 0;
@@ -366,7 +381,7 @@ body {
     display: flex;
     justify-content: space-between;
     position: fixed;
-    width: 280px;
+    width: 290px;
     z-index: 4;
 }
 
@@ -531,7 +546,7 @@ body {
     padding: 15px 10px 20px;
     background-color: white;
     border-top: 1px solid #bebebe;
-    width: 310px;
+    width: 320px;
     z-index: 4;
 }
 
@@ -614,7 +629,7 @@ body {
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 652px) {
 
     .phone-number{
         font-size: 14px;
@@ -638,5 +653,8 @@ body {
     }
     .container{
         margin-right: 280px;
+    }
+    .delete-button{
+        right: -10px;
     }
 }
