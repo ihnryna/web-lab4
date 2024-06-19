@@ -205,7 +205,6 @@ function createBigDescription(pizza, bigDescription) {
 }
 
 window.buy = function buy(source) {
-    alert(source.getAttribute("pizza-number-tooltip"));
     if (localStorage.getItem(source.getAttribute("pizza-number-tooltip")) == null) {
         let pizzaSized = mapPizzas.get(source.getAttribute("pizza-number-tooltip"));
         let cartCell = document.createElement('div');
@@ -318,7 +317,7 @@ window.buy = function buy(source) {
         pizzaIconSmall.alt = "Pizza";
         cartCell.append(pizzaIconSmall);
 
-        localStorage.setItem(source.getAttribute("pizza-number-tooltip"), 1);
+        localStorage.setItem(source.getAttribute("pizza-number-tooltip"), "1");
         document.getElementsByClassName("cells")[0].append(cartCell);
 
     } else {
@@ -331,7 +330,7 @@ window.buy = function buy(source) {
                 amount.innerHTML = (parseInt(amount.innerHTML) + parseInt("1")).toString();
                 document.getElementsByClassName("bottom-sum")[0].innerHTML = parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) + pizzaSized.price;
                 cell.firstElementChild.firstElementChild.nextElementSibling.nextElementSibling.firstElementChild.firstElementChild.innerHTML = ((parseInt(amount.innerHTML) * pizzaSized.price)).toString();
-                localStorage.setItem(cell.getAttribute("pizza-number"), parseInt(localStorage.getItem(cell.getAttribute("pizza-number"))) + 1);
+                localStorage.setItem(cell.getAttribute("pizza-number"), (parseInt(localStorage.getItem(cell.getAttribute("pizza-number"))) + 1).toString());
             }
         }
     }
@@ -347,21 +346,21 @@ window.minus = function minus(s) {
         s.parentNode.parentNode.parentNode.parentNode.removeChild(s.parentNode.parentNode.parentNode);
         localStorage.removeItem(s.getAttribute("pizza-number"));
     }
-    document.getElementsByClassName("bottom-sum")[0].innerHTML = parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) - parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price);
-    document.getElementsByClassName("amount")[0].innerHTML = parseInt(document.getElementsByClassName("amount")[0].innerHTML) - parseInt("1");
+    document.getElementsByClassName("bottom-sum")[0].innerHTML = (parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) - parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price)).toString();
+    document.getElementsByClassName("amount")[0].innerHTML = (parseInt(document.getElementsByClassName("amount")[0].innerHTML) - parseInt("1")).toString();
 }
 
 window.plus = function plus(s) {
-    s.previousElementSibling.innerHTML = parseInt(s.previousElementSibling.innerHTML) + parseInt("1");
-    s.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML = parseInt(s.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML) + parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price);
-    localStorage.setItem(s.getAttribute("pizza-number"), parseInt(localStorage.getItem(s.getAttribute("pizza-number"))) + 1);
-    document.getElementsByClassName("bottom-sum")[0].innerHTML = parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) + parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price);
-    document.getElementsByClassName("amount")[0].innerHTML = parseInt(document.getElementsByClassName("amount")[0].innerHTML) + parseInt("1");
+    s.previousElementSibling.innerHTML = (parseInt(s.previousElementSibling.innerHTML) + parseInt("1")).toString();
+    s.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML = (parseInt(s.previousElementSibling.previousElementSibling.previousElementSibling.firstElementChild.innerHTML) + parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price)).toString();
+    localStorage.setItem(s.getAttribute("pizza-number"), (parseInt(localStorage.getItem(s.getAttribute("pizza-number"))) + 1).toString());
+    document.getElementsByClassName("bottom-sum")[0].innerHTML = (parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) + parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price)).toString();
+    document.getElementsByClassName("amount")[0].innerHTML = (parseInt(document.getElementsByClassName("amount")[0].innerHTML) + parseInt("1")).toString();
 }
 
 window.deletePizza = function deletePizza(s) {
-    document.getElementsByClassName("bottom-sum")[0].innerHTML = parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) - parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price) * parseInt(s.previousElementSibling.previousElementSibling.innerHTML);
-    document.getElementsByClassName("amount")[0].innerHTML = parseInt(document.getElementsByClassName("amount")[0].innerHTML) - parseInt(s.previousElementSibling.previousElementSibling.innerHTML);
+    document.getElementsByClassName("bottom-sum")[0].innerHTML = (parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) - parseInt(mapPizzas.get(s.getAttribute("pizza-number")).price) * parseInt(s.previousElementSibling.previousElementSibling.innerHTML)).toString();
+    document.getElementsByClassName("amount")[0].innerHTML = (parseInt(document.getElementsByClassName("amount")[0].innerHTML) - parseInt(s.previousElementSibling.previousElementSibling.innerHTML)).toString();
     s.parentNode.parentNode.parentNode.parentNode.removeChild(s.parentNode.parentNode.parentNode);
     localStorage.removeItem(s.getAttribute("pizza-number"));
 }
@@ -467,8 +466,8 @@ window.updateCart = function updateCart() {
                     total.className = "total";
                     let totalCount = document.createElement('span');
                     totalCount.className = "total-count";
-                    totalCount.innerHTML = pizza.small_size.price * parseInt(localStorage.getItem(item));
-                    document.getElementsByClassName("bottom-sum")[0].innerHTML = parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) + pizza.small_size.price * parseInt(localStorage.getItem(item));
+                    totalCount.innerHTML = (pizza.small_size.price * parseInt(localStorage.getItem(item))).toString();
+                    document.getElementsByClassName("bottom-sum")[0].innerHTML = (parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) + pizza.small_size.price * parseInt(localStorage.getItem(item))).toString();
 
                     total.append(totalCount);
                     total.append("грн");
@@ -483,7 +482,7 @@ window.updateCart = function updateCart() {
 
                     let productAmount = document.createElement('span');
                     productAmount.className = "product-amount";
-                    productAmount.innerHTML = parseInt(localStorage.getItem(item));
+                    productAmount.innerHTML = (parseInt(localStorage.getItem(item))).toString();
                     result.append(productAmount);
 
                     let buttonPlus = document.createElement('button');
@@ -571,7 +570,7 @@ window.updateCart = function updateCart() {
                     let totalCount = document.createElement('span');
                     totalCount.className = "total-count";
                     totalCount.innerHTML = (pizza.big_size.price * parseInt(localStorage.getItem(item))).toString();
-                    document.getElementsByClassName("bottom-sum")[0].innerHTML = parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) + pizza.big_size.price * parseInt(localStorage.getItem(item));
+                    document.getElementsByClassName("bottom-sum")[0].innerHTML = (parseInt(document.getElementsByClassName("bottom-sum")[0].innerHTML) + pizza.big_size.price * parseInt(localStorage.getItem(item))).toString();
 
                     total.append(totalCount);
                     total.append("грн");
@@ -618,5 +617,6 @@ window.updateCart = function updateCart() {
         });
     }
 }
-
-
+window.goToStatistics = function goToStatistics() {
+    document.location='statistics.html';
+}

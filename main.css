@@ -576,6 +576,11 @@ body {
     margin-left: 20px;
 }
 
+a{
+    color: white;
+    text-decoration-line: none;
+}
+
 @media (max-width: 1700px) {
     .row{
         padding-right: 8%;

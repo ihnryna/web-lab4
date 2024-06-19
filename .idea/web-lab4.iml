@@ -6,5 +6,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="less.js" level="application" />
+    <orderEntry type="library" name="webdatarocks" level="application" />
+    <orderEntry type="library" name="webdatarocks.toolbar" level="application" />
   </component>
 </module>
